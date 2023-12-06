@@ -7,3 +7,7 @@ def build_url(host_name: str, relative_url: str, get_params: Mapping[str, str] =
     if get_params:
         querypart = '?' + '&'.join([f'{k}={v}' for (k, v) in get_params.items()])
     return f'{host_name}/{relative_url}{querypart}'
+
+
+print(build_url('git', 'got', {'name1':'value1', 'name2':'value2'}))
+print(build_url('git', 'got'))
