@@ -1,6 +1,5 @@
-from functions.level_1.one_gender import genderalize
+from functions.level_2.five_replace_word import replace_word
 import pytest
-
 
 @pytest.mark.parametrize(
     'verb_male, verb_female, gender, expected',
@@ -11,4 +10,3 @@ import pytest
 )
 def test_genderalize(verb_male, verb_female, gender, expected):
     assert genderalize(verb_male, verb_female, gender) == expected
-
