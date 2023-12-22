@@ -3,6 +3,7 @@ import datetime
 import decimal
 from functions.level_1.four_bank_parser import SmsMessage, Expense, BankCard
 
+
 @pytest.fixture
 def today():
     return datetime.date.today()
@@ -22,7 +23,6 @@ def smsmessage():
     )
 
 
-
 @pytest.fixture
 def bank_card():
     return BankCard(
@@ -30,13 +30,15 @@ def bank_card():
         owner='any_name',
     )
 
+
 @pytest.fixture
 def bank_cards(bank_card):
-    return  [
-        BankCard('3326', 'v_bank'), 
+    return [
+        BankCard('3326', 'v_bank'),
         BankCard('3326', 'v_bank'),
         bank_card,
     ]
+
 
 @pytest.fixture
 def expense(bank_card):
@@ -46,9 +48,3 @@ def expense(bank_card):
         spent_in='11/12',
         spent_at=datetime.datetime(2023, 1, 10, 12, 10),
     )
-
-
-
-    
-
-

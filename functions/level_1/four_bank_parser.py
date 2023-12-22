@@ -29,9 +29,6 @@ def parse_ineco_expense(sms: SmsMessage, cards: list[BankCard]) -> Expense:
         amount=decimal.Decimal(raw_sum.split(' ')[-2]),
         card=[c for c in cards if c.last_digits == raw_card[-4:]][0],
         spent_in=spend_in,
-        spent_at=datetime.datetime.strptime(f'{raw_date} {raw_time}', '%d.%m.%y %H:%M'),
+        spent_at=datetime.datetime.strptime(f'{raw_date} {raw_time}',
+                                            '%d.%m.%y %H:%M'),
     )
-
-# s = SmsMessage('1020 руб, 4400430255123326 20.02.23 16:20 7/11 authcode 3034', 'Jo', datetime.datetime(2000, 1, 2, 12, 13, 14))
-# b = BankCard('3330', 'a_bank'), BankCard('3326', 'v_bank')
-# print(parse_ineco_expense(s,b))

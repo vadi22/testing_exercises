@@ -14,7 +14,3 @@ def compose_datetime_from(date_str: str, time_str: str) -> datetime.datetime:
         int(hour_str),
         int(minute_str),
     )
-
-
-print(compose_datetime_from('1', '22:33'))
-print(compose_datetime_from('tomorrow', '22:33'))

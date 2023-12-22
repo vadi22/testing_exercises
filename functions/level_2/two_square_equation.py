@@ -17,6 +17,12 @@ def solve_square_equation(
         else:
             return None, None
 
-    root_left = (-linear_coefficient - math.sqrt(discriminant)) / (2 * square_coefficient)
-    root_right = (-linear_coefficient + math.sqrt(discriminant)) / (2 * square_coefficient)
+    if discriminant == 0:
+        root = (-linear_coefficient) / (2 * square_coefficient)
+        return root, None
+
+    root_left = (-linear_coefficient - math.sqrt(discriminant)) / (
+        2 * square_coefficient)
+    root_right = (-linear_coefficient + math.sqrt(discriminant)) / (
+        2 * square_coefficient)
     return root_left, root_right
