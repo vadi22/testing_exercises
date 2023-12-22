@@ -2,8 +2,8 @@ NOT_SET = "NOT_SET"
 
 
 def first(items: list[int], default: int | None | str = NOT_SET) -> int | None:
-    if items:
-        return items[0]
+    if items == []:
+        return None
     if default == NOT_SET:
-        raise AttributeError
-    return default
+        raise AttributeError from None
+    return items[0]

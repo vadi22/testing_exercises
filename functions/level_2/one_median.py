@@ -1,6 +1,6 @@
 
 
-def get_median_value(items: list[int]) -> int | None:
+def get_median_value(items: list[int]) -> int | float | None:
     """
     Вычисляет медиану списка целых чисел.
 
@@ -10,9 +10,8 @@ def get_median_value(items: list[int]) -> int | None:
         return None
 
     sorted_items = sorted(items)
-
-    middle_index = len(sorted_items) // 2 + 1
+    middle_index = len(sorted_items) // 2
     if len(sorted_items) % 2:
-        return items[middle_index]
+        return (sorted_items[middle_index])
     else:
-        return (items[middle_index] + items[middle_index + 1]) // 2
+        return (sorted_items[middle_index] + sorted_items[middle_index - 1])/2
